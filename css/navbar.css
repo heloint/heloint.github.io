@@ -1,3 +1,21 @@
+#banner-img {
+    background-image: url('../images/banner-background.jpg');
+    height: 60%;
+    position: absolute;
+    z-index: -1000;
+    width: 100%;
+}
+
 .navbar-nav > *:hover {
     background: lightblue;
+}
+
+#home-logo {
+    height: 4.5rem;
+    width: 4.9rem;
+}
+
+.reference-logo {
+    width:11rem;
+    height:3rem;
 }
