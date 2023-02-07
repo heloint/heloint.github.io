@@ -18,7 +18,7 @@
     <title>Candida Mine</title>
   </head>
   <body>
-    <header class="bg-light sticky-top">
+    <header class=" sticky-top" style="background-color: #eaeaea;">
       <div class="container">
         <div class="row">
           <nav class="navbar navbar-expand-lg">
@@ -104,8 +104,10 @@
                     type="search"
                     placeholder="Search"
                   />
-                  <button class="btn btn-primary my-2 my-sm-0" type="submit">
-                    Search
+                  <button type="submit" class="btn btn-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                      </svg>
                   </button>
                 </form>
               </div>
@@ -116,7 +118,8 @@
     </header>
 
     <!-- WELCOME / USERGUIDE -->
-    <section class="container">
+    <section class="container mt-5">
+
       <div class="row d-flex justify-content-center">
         <div class="col-6 my-5">
           <h3 class="text-center">Welcome Back!</h3>
@@ -142,115 +145,104 @@
     <!-- END: WELCOME / USERGUIDE -->
 
     <!-- QUERIES -->
-    <div class="container my-5">
+    <section class="container my-5">
       <div class="row justify-content-center">
-        <div class="col-6 my-5">
+        <div class="col-6">
+            <div class="text-center">
+                <img
+                  class="img-fluid title"
+                  style="max-height: 5rem"
+                  src="./images/telescope-logo.png"
+                  title="lists"
+                />
+            </div>
           <h3 class="text-center">Queries</h3>
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item" role="presentation">
                 <a
                   class="nav-link active"
                   data-bs-toggle="tab"
-                  href="#home"
+                  href="#genes"
                   aria-selected="true"
                   role="tab"
-                  >Home</a
+                  >GENES</a
                 >
               </li>
               <li class="nav-item" role="presentation">
                 <a
                   class="nav-link"
                   data-bs-toggle="tab"
-                  href="#profile"
+                  href="#function"
                   aria-selected="false"
                   tabindex="-1"
                   role="tab"
-                  >Profile</a
+                  >FUNCTION</a
                 >
               </li>
               <li class="nav-item" role="presentation">
                 <a
-                  class="nav-link disabled"
-                  href="#"
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  href="#expression"
                   aria-selected="false"
                   tabindex="-1"
                   role="tab"
-                  >Disabled</a
+                  >EXPRESSION</a
                 >
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item" role="presentation">
                 <a
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  href="#"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Dropdown</a
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  href="#variants"
+                  aria-selected="false"
+                  tabindex="-1"
+                  role="tab"
+                  >VARIANTS</a
                 >
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
               </li>
+             <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  href="#interactions"
+                  aria-selected="false"
+                  tabindex="-1"
+                  role="tab"
+                  >INTERACTIONS</a
+                >
+              </li>
+
             </ul>
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade show active" id="home" role="tabpanel">
-                <p>
-                  Raw denim you probably haven't heard of them jean shorts Austin.
-                  Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-                  cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-                  butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
-                  qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher
-                  voluptate nisi qui.
-                </p>
+
+            <!-- QUERIES TAB CONTENTS -->
+            <div id="myTabContent" class="tab-content rounded shadow-lg bg-light" style="background-color: #fbf3ec; min-height: 8rem;">
+              <div class="tab-pane fade show active" id="genes" role="tabpanel">
               </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel">
-                <p>
-                  Food truck fixie locavore, accusamus mcsweeney's marfa nulla
-                  single-origin coffee squid. Exercitation +1 labore velit, blog
-                  sartorial PBR leggings next level wes anderson artisan four loko
-                  farm-to-table craft beer twee. Qui photo booth letterpress, commodo
-                  enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-                  PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
-                  mollit.
-                </p>
+              <div class="tab-pane fade" id="function" role="tabpanel">
+                <p>funky functions</p>
               </div>
-              <div class="tab-pane fade" id="dropdown1">
-                <p>
-                  Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
-                  mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table
-                  readymade. Messenger bag gentrify pitchfork tattooed craft beer,
-                  iphone skateboard locavore carles etsy salvia banksy hoodie helvetica.
-                  DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
-                  pitchfork.
-                </p>
+              <div class="tab-pane fade" id="expression" role="tabpanel">
+                <p>dadada</p>
               </div>
-              <div class="tab-pane fade" id="dropdown2">
-                <p>
-                  Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art
-                  party before they sold out master cleanse gluten-free squid scenester
-                  freegan cosby sweater. Fanny pack portland seitan DIY, art party
-                  locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh
-                  DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral
-                  locavore cosby sweater.
-                </p>
-            </div>
+              <div class="tab-pane fade" id="variants" role="tabpanel">
+                <p>lalala</p>
+              </div>
+             <div class="tab-pane fade" id="interactions" role="tabpanel">
+                <p>fdsa</p>
+              </div>
           </div>
+          <!-- END: QUERIES TAB CONTENTS -->
           </div>
-        <div class="w-100 bg-secondary" style="height: 0.1rem"></div>
-      </div>
-    </div>
+        <!-- <div class="w-100 bg-secondary" style="height: 0.1rem"></div> -->
+      <!-- </div> -->
+    <!-- </section> -->
     <!-- END: QUERIES -->
 
     <!-- ANALYSE -->
-    <section class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
+    <!-- <section class="container my-5">
+      <div class="row justify-content-center"> -->
+        <div class="col-lg-4">
           <div id="lists-bochs" class="text-center">
             <img
               class="img-fluid title"
@@ -261,36 +253,39 @@
             <div class="inner">
               <h3>Analyse</h3>
               <form
+                  class="mt-1"
                 name="buildBagForm"
                 method="post"
                 action="/candidamine/buildBag.do"
               >
-                <p class="text-start">
-                  <a class="advanced" href="bag.do?subtab=upload">Advanced</a>
-                </p>
                 <div class="form-group">
                   <select class="form-control" name="type">
                     <option value="Gene">Gene</option>
                     <option value="Protein">Protein</option>
                   </select>
                 </div>
-                <div class="form-group h-100">
+                <div class="form-group shadow-lg h-100">
                   <textarea
-                    class="form-control"
-                    style="min-height: 5rem"
+                    class="form-control rounded"
+                    style="min-height: 8rem; background-color: #fbf3ec;"
                     id="listInput"
                     name="text"
+                    placeholder="Enter a list of identifiers."
                   >
-Enter a list of identifiers.&#13;&#10;e.g. CAL0000174561,BCK1,CAS1,DAP1,ECM17,ERV29, ESC4,FCA1,FCY23,FEN1,FEN12,FIG1,FLU1,FTR1,FUR1,GCN5,GCS1,GET2,GLN3,GPI7,GPR1,GRF10,GSC1,GTR1,HAC1,HDA1 , CR_08980C_A</textarea
-                  >
+Enter a list of identifiers.&#13;&#10;e.g. CAL0000174561,BCK1,CAS1,DAP1,ECM17,ERV29, ESC4,FCA1,FCY23,FEN1,FEN12,FIG1,FLU1,FTR1,FUR1,GCN5,GCS1,GET2,GLN3,GPI7,GPR1,GRF10,GSC1,GTR1,HAC1,HDA1 , CR_08980C_A
+                  </textarea>
                 </div>
-                <button
-                  class="btn btn-primary my-3"
-                  type="submit"
-                  value="analyse"
-                >
-                  Analyse
-                </button>
+
+                <div class="">
+                  <button
+                    class="btn btn-primary my-3"
+                    type="submit"
+                    value="analyse"
+                  >
+                    Analyse
+                  </button>
+                  <a class="advanced" href="bag.do?subtab=upload">Advanced</a>
+                </div>
               </form>
             </div>
           </div>
@@ -453,7 +448,6 @@ Enter a list of identifiers.&#13;&#10;e.g. CAL0000174561,BCK1,CAS1,DAP1,ECM17,ER
         </div>
       </section>
       <!-- Section: Links  -->
-
       <!-- Copyright -->
       <div
         class="text-center p-4"

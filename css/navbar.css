@@ -1,5 +1,9 @@
 body {
-    background-image: url('../images/body-background.avif');
+    /* background-image: url('../images/body-background.avif'); */
+    /* background-image: url('../images/testy1.jpg'); */
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../images/testy1-brigther.png');
+    /* background-image: url('../images/testy2.png'); */
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -25,4 +29,12 @@ body {
 .reference-logo {
     width:11rem;
     height:3rem;
+}
+
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
 }
