@@ -1,146 +1,148 @@
-    <!-- QUERIES & ANALYSE -->
-    <section class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="text-center">
-                <img
-                  class="img-fluid title"
-                  style="max-height: 5rem"
-                  src="./images/logos/telescope-logo.png"
-                  title="lists"
-                />
-            </div>
-          <h3 class="text-center">Queries</h3>
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a
-                  class="nav-link active"
-                  data-bs-toggle="tab"
-                  href="#genes"
-                  aria-selected="true"
-                  role="tab"
-                  >GENES</a
-                >
-              </li>
-              <li class="nav-item" role="presentation">
-                <a
-                  class="nav-link"
-                  data-bs-toggle="tab"
-                  href="#function"
-                  aria-selected="false"
-                  tabindex="-1"
-                  role="tab"
-                  >FUNCTION</a
-                >
-              </li>
-              <li class="nav-item" role="presentation">
-                <a
-                  class="nav-link"
-                  data-bs-toggle="tab"
-                  href="#expression"
-                  aria-selected="false"
-                  tabindex="-1"
-                  role="tab"
-                  >EXPRESSION</a
-                >
-              </li>
-              <li class="nav-item" role="presentation">
-                <a
-                  class="nav-link"
-                  data-bs-toggle="tab"
-                  href="#variants"
-                  aria-selected="false"
-                  tabindex="-1"
-                  role="tab"
-                  >VARIANTS</a
-                >
-              </li>
-             <li class="nav-item" role="presentation">
-                <a
-                  class="nav-link"
-                  data-bs-toggle="tab"
-                  href="#interactions"
-                  aria-selected="false"
-                  tabindex="-1"
-                  role="tab"
-                  >INTERACTIONS</a
-                >
-              </li>
+<!-- QUERIES & ANALYSE -->
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="text-center">
+        <img
+          class="img-fluid title"
+          style="max-height: 5rem"
+          src="./images/logos/telescope-logo.png"
+          title="lists"
+        />
+      </div>
+      <h3 class="text-center">Queries</h3>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            data-bs-toggle="tab"
+            href="#genes"
+            aria-selected="true"
+            role="tab"
+            >GENES</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#function"
+            aria-selected="false"
+            tabindex="-1"
+            role="tab"
+            >FUNCTION</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#expression"
+            aria-selected="false"
+            tabindex="-1"
+            role="tab"
+            >EXPRESSION</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#variants"
+            aria-selected="false"
+            tabindex="-1"
+            role="tab"
+            >VARIANTS</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            data-bs-toggle="tab"
+            href="#interactions"
+            aria-selected="false"
+            tabindex="-1"
+            role="tab"
+            >INTERACTIONS</a
+          >
+        </li>
+      </ul>
 
-            </ul>
-
-            <!-- QUERIES TAB CONTENTS -->
-            <div id="myTabContent" class="tab-content rounded shadow-lg bg-light" style="background-color: #fbf3ec; min-height: 8rem;">
-              <div class="tab-pane fade show active" id="genes" role="tabpanel">
-              </div>
-              <div class="tab-pane fade" id="function" role="tabpanel">
-                <p>funky functions</p>
-              </div>
-              <div class="tab-pane fade" id="expression" role="tabpanel">
-                <p>dadada</p>
-              </div>
-              <div class="tab-pane fade" id="variants" role="tabpanel">
-                <p>lalala</p>
-              </div>
-             <div class="tab-pane fade" id="interactions" role="tabpanel">
-                <p>fdsa</p>
-              </div>
-          </div>
-          <!-- END: QUERIES TAB CONTENTS -->
-          </div>
+      <!-- QUERIES TAB CONTENTS -->
+      <div
+        id="myTabContent"
+        class="tab-content rounded shadow-lg bg-light"
+        style="background-color: #fbf3ec; min-height: 8rem"
+      >
+        <div class="tab-pane fade show active" id="genes" role="tabpanel"></div>
+        <div class="tab-pane fade" id="function" role="tabpanel">
+          <p>funky functions</p>
+        </div>
+        <div class="tab-pane fade" id="expression" role="tabpanel">
+          <p>dadada</p>
+        </div>
+        <div class="tab-pane fade" id="variants" role="tabpanel">
+          <p>lalala</p>
+        </div>
+        <div class="tab-pane fade" id="interactions" role="tabpanel">
+          <p>fdsa</p>
+        </div>
+      </div>
+      <!-- END: QUERIES TAB CONTENTS -->
+    </div>
     <!-- END: QUERIES -->
 
     <!-- ANALYSE -->
-        <div class="col-lg-4">
-          <div id="lists-bochs" class="text-center">
-            <img
-              class="img-fluid title"
-              style="max-height: 5rem"
-              src="./images/logos/analyse-logo.png"
-              title="lists"
-            />
-            <div class="inner">
-              <h3>Analyse</h3>
-              <form
-                  class="mt-1"
-                name="buildBagForm"
-                method="post"
-                action="/candidamine/buildBag.do"
-              >
-                <div class="form-group">
-                  <select class="form-control" name="type">
-                    <option value="Gene">Gene</option>
-                    <option value="Protein">Protein</option>
-                  </select>
-                </div>
-                <div class="form-group shadow-lg h-100">
-                  <textarea
-                    class="form-control rounded"
-                    style="min-height: 8rem; background-color: #fbf3ec;"
-                    id="listInput"
-                    name="text"
-                    placeholder="Enter a list of identifiers."
-                  >
-Enter a list of identifiers.&#13;&#10;e.g. CAL0000174561,BCK1,CAS1,DAP1,ECM17,ERV29, ESC4,FCA1,FCY23,FEN1,FEN12,FIG1,FLU1,FTR1,FUR1,GCN5,GCS1,GET2,GLN3,GPI7,GPR1,GRF10,GSC1,GTR1,HAC1,HDA1 , CR_08980C_A
-                  </textarea>
-                </div>
-
-                <div class="">
-                  <button
-                    class="btn btn-primary my-3"
-                    type="submit"
-                    value="analyse"
-                  >
-                    Analyse
-                  </button>
-                  <a class="advanced" href="bag.do?subtab=upload">Advanced</a>
-                </div>
-              </form>
+    <div class="col-lg-4">
+      <div id="lists-bochs" class="text-center">
+        <img
+          class="img-fluid title"
+          style="max-height: 5rem"
+          src="./images/logos/analyse-logo.png"
+          title="lists"
+        />
+        <div class="inner">
+          <h3>Analyse</h3>
+          <form
+            class="mt-1"
+            name="buildBagForm"
+            method="post"
+            action="/candidamine/buildBag.do"
+          >
+            <div class="form-group">
+              <select class="form-control" name="type">
+                <option value="Gene">Gene</option>
+                <option value="Protein">Protein</option>
+              </select>
             </div>
-          </div>
-        </div>
-        <div class="w-100 bg-secondary" style="height: 0.1rem"></div>
-      </div>
-    </section>
-    <!-- END: QUERIES & ANALYSE -->
+            <div class="form-group shadow-lg h-100">
+              <textarea
+                class="form-control rounded"
+                style="min-height: 8rem; background-color: #fbf3ec"
+                id="listInput"
+                name="text"
+                placeholder="Enter a list of identifiers."
+              >
+Enter a list of identifiers.&#13;&#10;e.g. CAL0000174561,BCK1,CAS1,DAP1,ECM17,ERV29, ESC4,FCA1,FCY23,FEN1,FEN12,FIG1,FLU1,FTR1,FUR1,GCN5,GCS1,GET2,GLN3,GPI7,GPR1,GRF10,GSC1,GTR1,HAC1,HDA1 , CR_08980C_A
+                  </textarea
+              >
+            </div>
 
+            <div class="">
+              <button
+                class="btn btn-primary my-3"
+                type="submit"
+                value="analyse"
+              >
+                Analyse
+              </button>
+              <a class="advanced" href="bag.do?subtab=upload">Advanced</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 bg-secondary" style="height: 0.1rem"></div>
+  </div>
+</section>
+<!-- END: QUERIES & ANALYSE -->

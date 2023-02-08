@@ -23,22 +23,22 @@
   </head>
 
   <body>
-      <!-- Include components -->
+    <!-- Include components -->
     <div data-include="header"></div>
     <div data-include="carousel"></div>
     <div data-include="queries-analyse"></div>
     <div data-include="footer"></div>
 
     <!-- LOAD HTML SNIPPETS -->
-      <script>
-        $(function () {
-          var includes = $('[data-include]')
-          $.each(includes, function () {
-            var file = 'components/' + $(this).data('include') + '.html'
-            $(this).load(file)
-          })
-        })
-      </script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "components/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
     <!-- END:LOAD HTML SNIPPETS -->
   </body>
 </html>

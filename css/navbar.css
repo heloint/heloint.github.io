@@ -1,9 +1,8 @@
 .navbar-nav > *:hover {
-  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 #1F75FE;
+  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -3px 0 0 #1f75fe;
 }
 
 #home-logo {
-    height: 4.5rem;
-    width: 4.9rem;
+  height: 4.5rem;
+  width: 4.9rem;
 }
-
