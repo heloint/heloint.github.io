@@ -1,0 +1,102 @@
+<div class="container px-5 my-4">
+  <form class="card mb-3">
+    <h3 class="card-header">
+      <img
+        src="./images/logos/templates-logo.png"
+        style="max-width: 5rem"
+      />Templates
+    </h3>
+
+    <p class="card-text">
+      Templates are predefined queries, each has a simple form and a
+      description.
+    </p>
+    <p>
+      Click on a template to run it, you can search for templates by keyword and
+      filter them by category.
+    </p>
+
+    <div class="card-body"></div>
+    <ul class="list-group list-group-flush templates-menu-list-hover">
+      <li class="list-group-item"
+        >
+        <fieldset class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick="toggleHighlight(event.target.parentNode.parentNode.parentNode)"
+            />
+            <small><a href="#" target="_blank">LncRNA Dataset</a></small>
+          </div>
+          <small
+            ><i class=""
+              >SRA Runs and Study used in LncRNA predictions</i
+            ></small
+          >
+        </fieldset>
+      </li>
+
+      <li class="list-group-item">
+        <fieldset class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick="toggleHighlight(event.target.parentNode.parentNode.parentNode)"
+            />
+            <small><a href="#" target="_blank">Gene -> Expression Profile</a></small>
+          </div>
+          <small
+            ><i class=""
+              >Retrive Gene expression profile filtered by TMP or read count</i
+            ></small
+          >
+        </fieldset>
+      </li>
+
+      <li class="list-group-item">
+        <fieldset class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick="toggleHighlight(event.target.parentNode.parentNode.parentNode)"
+            />
+            <small><a href="#" target="_blank">Gene --> Proteins.</a></small>
+          </div>
+          <small
+            ><i class=""
+              >Show the proteins for a particular gene.</i
+            ></small
+          >
+        </fieldset>
+      </li>
+
+    </ul>
+  </form>
+</div>
+
+<script>
+  /* Turns the "target" argument element highlighted,
+   * if the checkbox inside of it has been clicked.
+   * @param event object<event>
+   * @return None
+   */
+  function toggleHighlight(target) {
+    const targetStyle = target.style;
+    const currentColor = targetStyle.background;
+
+    if (currentColor === "") {
+      targetStyle.background = "lightblue";
+    } else {
+      targetStyle.background = "";
+    }
+  }
+</script>
