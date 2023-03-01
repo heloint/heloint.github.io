@@ -35,21 +35,31 @@ function backToTop() {
 
 // STEPPER FOR THE LIST UPLOAD
 // =======================================================================
-const stepButtons = document.querySelectorAll('.step-button');
-const progress = document.querySelector('#progress');
+var progressBar = {
+  Bar : $('#progress-bar'),
+  Reset : function(){
+    if (this.Bar){
+      this.Bar.find('li').removeClass('active'); 
+    }
+  },
+  Next: function(){
+    $('#progress-bar li:not(.active):first').addClass('active');
+  },
+  Back: function(){
+    $('#progress-bar li.active:last').removeClass('active');
+  }
+}
 
-Array.from(stepButtons).forEach((button,index) => {
-    button.addEventListener('click', () => {
-        progress.setAttribute('value', index * 100 /(stepButtons.length - 1) );//there are 3 buttons. 2 spaces.
+progressBar.Reset();
 
-        stepButtons.forEach((item, secindex)=>{
-            if(index > secindex){
-                item.classList.add('done');
-            }
-            if(index < secindex){
-                item.classList.remove('done');
-            }
-        })
-    })
+////
+$("#Next").on('click', function(){
+  progressBar.Next();
+})
+$("#Back").on('click', function(){
+  progressBar.Back();
+})
+$("#Reset").on('click', function(){
+  progressBar.Reset();
 })
 // =======================================================================
