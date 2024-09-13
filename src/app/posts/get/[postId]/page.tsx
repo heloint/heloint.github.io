@@ -35,6 +35,5 @@ export default async function Page({ params }: { params: { postId: string } }) {
         <span>{matterResult.data.title}</span>
         <span>{matterResult.data.date}</span>
         <span>{contentHtml}</span>
-        
     </div>);
 }
