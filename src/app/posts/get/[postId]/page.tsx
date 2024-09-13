@@ -31,9 +31,11 @@ export default async function Page({ params }: { params: { postId: string } }) {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  console.log(contentHtml)
+
   return (<div>
         <span>{matterResult.data.title}</span>
         <span>{matterResult.data.date}</span>
-        <span>{contentHtml}</span>
+        <span dangerouslySetInnerHTML={{__html: contentHtml}}></span>
     </div>);
 }
