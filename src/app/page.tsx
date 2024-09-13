@@ -6,7 +6,10 @@ import * as fs from 'fs';
 import matter from 'gray-matter';
 
 export default async function Home() {
-  const markdownPath = path.join(process.cwd(), "_markdown_contents", "posts", "1.md")
+  const postsMarkdownDir = path.join(process.cwd(), "_markdown_contents", "posts");
+  const markdownFiles = fs.readdirSync(postsMarkdownDir);
+  console.log(markdownFiles);
+  const markdownPath = path.join(process.cwd(), "_markdown_contents", "posts", "1.md");
   const fileContents = fs.readFileSync(markdownPath, 'utf8');
   const matterResult = matter(fileContents)
   // Use remark to convert markdown into HTML string
