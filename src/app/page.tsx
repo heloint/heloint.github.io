@@ -96,7 +96,6 @@ export default async function Home() {
           <h2 className="text-xl">World</h2>
         </Card1>
       </OpacityTransitionWrapper>
-
     </div>
   );
 }

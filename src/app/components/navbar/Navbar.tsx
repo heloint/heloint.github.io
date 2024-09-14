@@ -68,9 +68,9 @@ export default function Navbar() {
             <a href="/">
               <img
                 alt="navbar icon"
-                width={70}
-                height={70}
-                src="/images/treeko-logo.png"
+                width={200}
+                height={200}
+                src="/icons/signature-icon.png"
                 className="hover:scale-105"
               />
             </a>

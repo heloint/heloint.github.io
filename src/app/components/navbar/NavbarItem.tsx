@@ -25,7 +25,7 @@ export default function NavbarItem(props: NavbarItemProps) {
 
   return (
     <li
-      className={`text-black text-lg text-center border-2 lg:border-0 border-slate-300 border-x-transparent border-b-transparent w-100 animated-bottom-border ${
+      className={`text-black lg:pt-4 text-lg text-center border-2 lg:border-0 border-slate-300 border-x-transparent border-b-transparent w-100 animated-bottom-border ${
         isSelected ? "underline underline-offset-8" : ""
       }`}
       aria-hidden={
