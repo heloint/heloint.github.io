@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import "./style.css";
 
+
 export default function WordSwapper({
     className,
     uniqueId,
@@ -69,7 +70,7 @@ export default function WordSwapper({
 
     return (
         <div
-            className={`relative rotating-text font-serif font-semibold translate-x-[-80px] flex gap-4 justify-center text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[7rem] text-black ${className} px-24`}
+            className={`relative rotating-text translate-x-[-70px] flex gap-4 justify-center ${className}`}
         >
             <p className="m-0 inline-flex align-top">
                 {Object.entries(wordsWithColors).map((item, idx) => {
