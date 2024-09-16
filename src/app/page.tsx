@@ -5,7 +5,7 @@ import OpacityTransitionWrapper from "./components/opacity-transition-wrapper/Op
 
 export default async function Home() {
     return (
-        <div className="w-full px-4 lg:px-72">
+        <div className="w-full px-4 lg:px-52">
             <div className="grid grid-cols-5 items-start">
                 <Introduction className="col-span-5 sm:col-span-2" />
                 <div className="text-2xl text-pretty font-serif text-gray-700 w-full col-span-5 sm:col-span-3">
@@ -17,25 +17,26 @@ export default async function Home() {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center bg-gray-200 h-44 bg-opacity-55 rounded-lg">
-                <Header1 headerText="PROJECTS" className="w-full text-center text-6xl flex-none text-gray-700 font-serif"/>
-            </div>
             <OpacityTransitionWrapper className="w-full">
-                <Card1 className="slanted-bottom-to-right bg-red-900 h-96">
-                    <h1 className="text-2xl">Hello</h1>
-                    <h2 className="text-xl">World</h2>
+                <Card1 className="flex justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
+                <Header1 headerText="PROJECTS" className="w-full text-center text-6xl flex-none text-gray-800 font-serif"/>
                 </Card1>
             </OpacityTransitionWrapper>
 
             <OpacityTransitionWrapper className="w-full bg-transparent">
-                <div className="h-96">
-                    <h1 className="text-2xl">Hello</h1>
-                    <h2 className="text-xl">World</h2>
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full p-4 ">
+                    <div className="col-span-1  border-slate-600 duration-500 hover:scale-105">
+                        <div className="flex justify-center items-center p-4 rounded-t-lg bg-gray-300 bg-opacity-70 w-full"><span className="text-2xl underline">PhylomeDB</span></div>
+                        <img src="/phylomedb-scrnshot.png" className="border-2 border-t-0 rounded-t-none rounded-xl"/>
+                    </div>
+                    <div className="col-span-1  border-slate-600">
+                        <img src="/phylomedb-scrnshot.png" className="border-2 rounded-xl"/>
+                    </div>
                 </div>
             </OpacityTransitionWrapper>
 
             <OpacityTransitionWrapper className="w-full">
-                <Card1 className="slanted-top-to-right bg-blue-200 h-96">
+                <Card1 className="slanted-top-to-right bg-blue-900 h-96">
                     <h1 className="text-2xl">Hello</h1>
                     <h2 className="text-xl">World</h2>
                 </Card1>
