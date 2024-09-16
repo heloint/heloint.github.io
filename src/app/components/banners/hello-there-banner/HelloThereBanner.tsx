@@ -18,7 +18,7 @@ export default function HelloThereBanner({
     };
 
     return (
-        <div className="relative flex flex-col h-96 font-serif text-gray-700">
+        <div className="relative flex flex-col h-fit font-serif text-gray-700">
             <div className="flex items-start gap-4 pl-16">
                 <WordSwapper
                     wordsWithColors={greetings}
