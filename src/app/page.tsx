@@ -64,7 +64,7 @@ function WorkedOnSection() {
                 <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
                     <Header1
                         headerText="WORKED ON"
-                        className="w-full text-center text-6xl flex-none font-serif"
+                        className="w-full text-center text-5xl sm:text-6xl flex-none font-serif"
                     />
                     <hr className="h-2 border-2 bg-black flex-none w-full skew-x-12" />
                 </Card1>
@@ -84,6 +84,17 @@ function WorkedOnSection() {
                         />
                     </div>
 
+                    <div className="col-span-1  border-slate-600 duration-150 hover:scale-105">
+                        <div className="flex justify-center items-center p-2 rounded-t-lg bg-gray-300 bg-opacity-70 w-full">
+                            <span className="text-2xl underline">
+                                PhylomeDB
+                            </span>
+                        </div>
+                        <img
+                            src="/phylomedb-scrnshot.png"
+                            className="border-2 border-t-0 rounded-t-none rounded-xl"
+                        />
+                    </div>
                     <div className="col-span-1  border-slate-600 duration-150 hover:scale-105">
                         <div className="flex justify-center items-center p-2 rounded-t-lg bg-gray-300 bg-opacity-70 w-full">
                             <span className="text-2xl underline">
