@@ -30,12 +30,10 @@ export default async function Page({ params }: { params: { postId: string } }) {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-  console.log(contentHtml)
-
+  const htmlContent = processedContent.toString();
   return (<div>
         <span>{matterResult.data.title}</span>
         <span>{matterResult.data.date}</span>
-        <span dangerouslySetInnerHTML={{__html: contentHtml}}></span>
+        <span dangerouslySetInnerHTML={{__html: htmlContent}}></span>
     </div>);
 }

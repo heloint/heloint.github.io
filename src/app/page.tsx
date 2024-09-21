@@ -19,7 +19,7 @@ export default async function Home() {
 
             <OpacityTransitionWrapper className="w-full">
                 <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
-                <Header1 headerText="PROJECTS" className="w-full text-center text-6xl flex-none font-serif"/>
+                <Header1 headerText="WORKED ON" className="w-full text-center text-6xl flex-none font-serif"/>
                 <hr className="h-2 border-2 bg-black flex-none w-full skew-x-12"/>
                 </Card1>
             </OpacityTransitionWrapper>
