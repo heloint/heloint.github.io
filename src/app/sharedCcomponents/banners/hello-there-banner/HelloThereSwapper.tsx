@@ -6,7 +6,7 @@ import WordSwapper from "./WordSwapper";
 
 
 
-export default function HelloThereBanner({
+export default function HelloThereSwapper({
     className,
 }: {
     className?: string;
