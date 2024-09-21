@@ -17,24 +17,7 @@ export default async function Home() {
                 </div>
             </div>
 
-            <OpacityTransitionWrapper className="w-full">
-                <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
-                <Header1 headerText="WORKED ON" className="w-full text-center text-6xl flex-none font-serif"/>
-                <hr className="h-2 border-2 bg-black flex-none w-full skew-x-12"/>
-                </Card1>
-            </OpacityTransitionWrapper>
-
-            <OpacityTransitionWrapper className="w-full bg-transparent">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full p-4 ">
-                    <div className="col-span-1  border-slate-600 duration-500 hover:scale-105">
-                        <div className="flex justify-center items-center p-4 rounded-t-lg bg-gray-300 bg-opacity-70 w-full"><span className="text-2xl underline">PhylomeDB</span></div>
-                        <img src="/phylomedb-scrnshot.png" className="border-2 border-t-0 rounded-t-none rounded-xl"/>
-                    </div>
-                    <div className="col-span-1  border-slate-600">
-                        <img src="/phylomedb-scrnshot.png" className="border-2 rounded-xl"/>
-                    </div>
-                </div>
-            </OpacityTransitionWrapper>
+            <WorkedOnSection />
 
             <OpacityTransitionWrapper className="w-full">
                 <Card1 className="slanted-top-to-right bg-blue-900 h-96">
@@ -71,6 +54,50 @@ export default async function Home() {
                 </Card1>
             </OpacityTransitionWrapper>
         </div>
+    );
+}
+
+function WorkedOnSection() {
+    return (
+        <section>
+            <OpacityTransitionWrapper className="w-full">
+                <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
+                    <Header1
+                        headerText="WORKED ON"
+                        className="w-full text-center text-6xl flex-none font-serif"
+                    />
+                    <hr className="h-2 border-2 bg-black flex-none w-full skew-x-12" />
+                </Card1>
+            </OpacityTransitionWrapper>
+
+            <OpacityTransitionWrapper className="w-full bg-transparent">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 w-full">
+                    <div className="col-span-1  border-slate-600 duration-150 hover:scale-105">
+                        <div className="flex justify-center items-center p-2 rounded-t-lg bg-gray-300 bg-opacity-70 w-full">
+                            <span className="text-2xl underline">
+                                PhylomeDB
+                            </span>
+                        </div>
+                        <img
+                            src="/phylomedb-scrnshot.png"
+                            className="border-2 border-t-0 rounded-t-none rounded-xl"
+                        />
+                    </div>
+
+                    <div className="col-span-1  border-slate-600 duration-150 hover:scale-105">
+                        <div className="flex justify-center items-center p-2 rounded-t-lg bg-gray-300 bg-opacity-70 w-full">
+                            <span className="text-2xl underline">
+                                PhylomeDB
+                            </span>
+                        </div>
+                        <img
+                            src="/phylomedb-scrnshot.png"
+                            className="border-2 border-t-0 rounded-t-none rounded-xl"
+                        />
+                    </div>
+                </div>
+            </OpacityTransitionWrapper>
+        </section>
     );
 }
 
