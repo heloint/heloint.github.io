@@ -18,8 +18,9 @@ export default async function Home() {
             </div>
 
             <OpacityTransitionWrapper className="w-full">
-                <Card1 className="flex justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
-                <Header1 headerText="PROJECTS" className="w-full text-center text-6xl flex-none text-gray-800 font-serif"/>
+                <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-gray-200 h-36">
+                <Header1 headerText="PROJECTS" className="w-full text-center text-6xl flex-none font-serif"/>
+                <hr className="h-2 border-2 bg-black flex-none w-full skew-x-12"/>
                 </Card1>
             </OpacityTransitionWrapper>
 
@@ -81,15 +82,15 @@ function Introduction({ className }: { className?: string }) {
             <div className="relative flex items-center justify-center">
                 <img
                     src="/profile.jpg"
-                    width={270}
-                    height={270}
+                    width={200}
+                    height={200}
                     className="rounded-full"
                 />
                 <img
-                    src="/icons/waving-hand-icon.png"
+                    src="/icons/waving-hand-icon.svg"
                     width={100}
                     height={100}
-                    className="absolute bottom-0 left-0"
+                    className="absolute -bottom-1 -left-16"
                 />
             </div>
         </div>
