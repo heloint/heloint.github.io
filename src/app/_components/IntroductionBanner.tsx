@@ -1,4 +1,4 @@
-import HelloThereSwapper from "../../sharedCcomponents/banners/hello-there-banner/HelloThereSwapper";
+import HelloThereSwapper from "../../sharedComponents/banners/hello-there-banner/HelloThereSwapper";
 
 
 export function IntroductionBanner() {

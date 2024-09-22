@@ -1,6 +1,6 @@
-import Header1 from "../../sharedCcomponents/animated-headers/Header1";
-import Card1 from "../../sharedCcomponents/cards/card1";
-import OpacityTransitionWrapper from "../../sharedCcomponents/opacity-transition-wrapper/OpacityTransitionWrapper";
+import Header1 from "../../sharedComponents/animated-headers/Header1";
+import Card1 from "../../sharedComponents/cards/card1";
+import OpacityTransitionWrapper from "../../sharedComponents/opacity-transition-wrapper/OpacityTransitionWrapper";
 
 type WorkedOnSectionContent = {
     title: string;

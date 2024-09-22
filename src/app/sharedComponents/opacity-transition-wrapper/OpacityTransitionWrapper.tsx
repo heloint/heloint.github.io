@@ -1,6 +1,6 @@
 "use client";
 
-import { useIsVisible } from "@/app/lib/customHooks";
+import { useIsVisible } from "@/lib/customHooks";
 import { useRef } from "react";
 
 export default function OpacityTransitionWrapper({

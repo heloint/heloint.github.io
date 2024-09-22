@@ -1,7 +1,7 @@
 import { IntroductionBanner } from "./_components/IntroductionBanner";
 import { WorkedOnSection } from "./_components/WorkedOnSection";
-import Card1 from "./sharedCcomponents/cards/card1";
-import OpacityTransitionWrapper from "./sharedCcomponents/opacity-transition-wrapper/OpacityTransitionWrapper";
+import Card1 from "@/sharedComponents/cards/card1";
+import OpacityTransitionWrapper from "@/sharedComponents/opacity-transition-wrapper/OpacityTransitionWrapper";
 
 export default async function Home() {
     return (
