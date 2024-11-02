@@ -22,7 +22,7 @@ export default function Navbar() {
     useEffect(() => {
         const lang = getLangFromUrlClientSide();
         setLangParam(lang);
-    }, []);
+    });
 
     useEffect(() => {
         if (window.innerWidth <= 1024) {
