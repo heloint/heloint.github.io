@@ -9,8 +9,10 @@ import matter from "gray-matter";
 import Header1 from "@/components/animated-headers/Header1";
 import Card1 from "@/components/cards/card1";
 import OpacityTransitionWrapper from "@/components/opacity-transition-wrapper/OpacityTransitionWrapper";
+import { ServerComponentLangProp } from "@/lib/internationalization/langParam";
+import { DICTIONARY } from "@/lib/internationalization/dictionary";
 
-export default function PostsSection() {
+export default function PostsSection(props: ServerComponentLangProp) {
     const postsMarkdownDir = path.join(
         process.cwd(),
         "_markdown_contents",
@@ -25,7 +27,7 @@ export default function PostsSection() {
             <OpacityTransitionWrapper className="w-full">
                 <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-transparent">
                     <Header1
-                        headerText="POSTS"
+                        headerText={DICTIONARY.PostsSection.header1Text[props.lang ? props.lang : "en"]}
                         className="w-full text-center text-2xl sm:text-4xl flex-none font-serif"
                     />
                     <div className="py-3 w-full">

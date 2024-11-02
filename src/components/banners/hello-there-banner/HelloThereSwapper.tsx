@@ -1,20 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
 import "./style.css";
 import WordSwapper from "./WordSwapper";
+import { ServerComponentLangProp } from "@/lib/internationalization/langParam";
+import { DICTIONARY } from "@/lib/internationalization/dictionary";
 
-export default function HelloThereSwapper({
-    className,
-}: {
-    className?: string;
-}) {
+export default function HelloThereSwapper(props: ServerComponentLangProp) {
     const greetings = {
         "Hey, folks!": "",
         "¡Hola, gente!": "",
         "Sziasztok!": "",
     };
-
+    console.log(props.lang)
     return (
         <div className="relative flex flex-col h-fit font-serif text-gray-700">
             <div className="flex items-start gap-4 pl-16">
@@ -27,12 +24,18 @@ export default function HelloThereSwapper({
             </div>
             <div className="text-2xl text-pretty pt-16 w-full">
                 <p>
-                    I'm Daniel. I'm a full-stack developer with the Gabaldón Lab
-                    at the Barcelona Supercomputing Center.
+                    {
+                        DICTIONARY.HelloThereSwapper.paragraph1[
+                            props.lang ? props.lang : "en"
+                        ]
+                    }
                 </p>
                 <p>
-                    Developing, maintaining and administrating web applications,
-                    CLI tools, web services, databases and servers.
+                    {
+                        DICTIONARY.HelloThereSwapper.paragraph2[
+                            props.lang ? props.lang : "en"
+                        ]
+                    }
                 </p>
             </div>
         </div>

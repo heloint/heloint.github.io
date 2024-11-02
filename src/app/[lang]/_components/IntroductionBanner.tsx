@@ -1,14 +1,22 @@
 import HelloThereSwapper from "@/components/banners/hello-there-banner/HelloThereSwapper";
+import {
+    LangParam,
+    ServerComponentLangProp,
+} from "@/lib/internationalization/langParam";
+import { DICTIONARY } from "@/lib/internationalization/dictionary";
 
-export function IntroductionBanner() {
+export function IntroductionBanner(props: ServerComponentLangProp) {
     return (
         <div className="grid grid-cols-5 items-start">
             <ProfilePicture className="col-span-5 sm:col-span-2" />
             <div className="text-2xl text-pretty font-serif text-gray-700 w-full col-span-5 sm:col-span-3">
-                <HelloThereSwapper className="px-3 lg:px-16" />
+                <HelloThereSwapper lang={props.lang} />
                 <p>
-                    Have a look around to get more info about me and checkout
-                    some of the projects I have participated in.
+                    {
+                        DICTIONARY.IntroductionBanner.paragraph1[
+                            props.lang ? props.lang : "en"
+                        ]
+                    }
                 </p>
             </div>
         </div>

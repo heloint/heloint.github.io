@@ -6,12 +6,12 @@ import TechIcon, { TechIconDetailsKeys } from "./TechIcon";
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
+import { ServerComponentLangProp } from "@/lib/internationalization/langParam";
+import { DICTIONARY } from "@/lib/internationalization/dictionary";
 
 type WorkedOnSectionContent = {
     title: string;
@@ -21,129 +21,20 @@ type WorkedOnSectionContent = {
     description?: string;
 };
 
-export function WorkedOnSection() {
-    const content: WorkedOnSectionContent[] = [
-        {
-            title: "Phylomizer3.0 (Internal private platform)",
-            referenceURL: "https://github.com/Gabaldonlab/phylomizer",
-            imgURL: "/project-imgs/phylomizer3-scrnshot.png",
-            usedTechs: [
-                "nextjs",
-                "fastapi",
-                "typescript",
-                "python",
-                "slurm",
-                "tailwind",
-                "apache",
-                "mariadb",
-                "docker",
-                "dockercompose",
-            ],
-            description: `This project involved redesigning an internal platform for managing phylogenetic data,
-            processing pipelines, and job tracking with an HPC cluster, transitioning from a simple Python WSGI backend with a Vue 2
-            frontend to a more robust tech stack and prioritize development speed, ease of use, and framework popularity, ensuring
-            future developers could quickly familiarize themselves with the technology.`,
-        },
-        {
-            title: "Treeko's archive page",
-            referenceURL: "https://treeko.cgenomics.org",
-            imgURL: "/project-imgs/treeko-scrnshot.png",
-            usedTechs: [
-                "nextjs",
-                "typescript",
-                "tailwind",
-                "apache",
-                "docker",
-                "dockercompose",
-            ],
-            description: `Archive documentation page of the Treeko algorithm,
-            built with Next.js and exported as a static website. Minimalist design,
-            mainly focused on SEO and accessibility.`,
-        },
-        {
-            title: "CandidaMine",
-            referenceURL: "https://candidamine.org",
-            imgURL: "/project-imgs/candidamine-scrnshot.png",
-            usedTechs: ["java", "nginx", "bootstrap", "postgres", "tomcat"],
-            description: `I was responsible for the update of the UI's design and frontend dependencies
-            to improve the accesibility and responsiveness of the application.`,
-        },
-        {
-            title: "PhyloExplorer feature for PhylomeDB",
-            referenceURL: "https://phylomedb.org/phylomes?s=expl",
-            imgURL: "/project-imgs/phylo-explorer.png",
-            usedTechs: ["python", "mariadb", "sqlite3", "d3js", "slurm"],
-            description: `PhyloExplorer allows you to better decide which
-            phylome suits your need by selecting a set of species that the
-            phylome must contain, and indicating what other species are in
-            each phylome and how well they are represented.
-            The development of this new feature was the main project of my DUAL
-            internship for the higher technician certificate in web development.`,
-        },
-        {
-            title: "PhylomeDB",
-            referenceURL: "https://phylomedb.org",
-            imgURL: "/project-imgs/phylomedb-scrnshot.png",
-            usedTechs: [
-                "drupal",
-                "php",
-                "python",
-                "bootstrap",
-                "mariadb",
-                "apache",
-                "docker",
-                "dockercompose",
-            ],
-            description: `Maintainer and admin of the project.`,
-        },
-        {
-            title: "EvolclustDB",
-            referenceURL: "https://evolclustdb.org/",
-            imgURL: "/project-imgs/evolclustdb-scrnshot.png",
-            usedTechs: [
-                "codeigniter",
-                "php",
-                "python",
-                "bootstrap",
-                "mariadb",
-                "apache",
-                "docker",
-                "dockercompose",
-            ],
-            description: `Maintainer and admin of the project.`,
-        },
-        {
-            title: "MetaPhOrs",
-            referenceURL: "https://orthology.phylomedb.org",
-            imgURL: "/project-imgs/metaphors-scrnshot.png",
-            usedTechs: [
-                "drupal",
-                "php",
-                "python",
-                "slurm",
-                "bootstrap",
-                "mariadb",
-                "apache",
-                "docker",
-                "dockercompose",
-            ],
-            description: `Maintainer and admin of the project.`,
-        },
-        {
-            title: "CGenomics",
-            referenceURL: "https://cgenomics.org",
-            imgURL: "/project-imgs/cgenomics-scrnshot.png",
-            usedTechs: ["wordpress"],
-            description: `Maintainer and admin of the project.`,
-        },
-    ];
+export function WorkedOnSection(props: ServerComponentLangProp) {
+    const contents: WorkedOnSectionContent[] = DICTIONARY.WorkedOnSection
+        .contents[props.lang ? props.lang : "en"] as WorkedOnSectionContent[];
 
     return (
         <section id="works" className="scroll-mt-14">
             <OpacityTransitionWrapper className="w-full">
                 <Card1 className="flex flex-col justify-center items-center slanted-bottom-to-right bg-transparent">
                     <Header1
-                        headerText="I'VE BEEN WORKING ON"
+                        headerText={
+                            DICTIONARY.WorkedOnSection.header1Text[
+                                props.lang ? props.lang : "en"
+                            ]
+                        }
                         className="w-full text-center text-2xl sm:text-4xl flex-none font-serif"
                     />
                     <div className="py-3 w-full">
@@ -154,7 +45,7 @@ export function WorkedOnSection() {
 
             <OpacityTransitionWrapper className="w-full bg-transparent">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-                    {content.map((item, idx) => (
+                    {contents.map((item, idx) => (
                         <WorkedOnSectionItem
                             key={idx}
                             title={item.title}

@@ -4,12 +4,20 @@ import SideBarOpenButton from "./SideBarToggleButton";
 import SideBarCloseButton from "./SideBarCloseButton";
 import NavbarItem from "./NavbarItem";
 import Link from "next/link";
+import {DICTIONARY} from '@/lib/internationalization/dictionary';
+import { getLangFromUrlClientSide, LangParam } from "@/lib/internationalization/langParam";
 
 export default function Navbar() {
     const navbarOptionsRef = useRef<HTMLUListElement>(null);
     const [isTopPosition, setTopPosition] = useState(true);
     const [isDroppedDown, setDroppedDown] = useState(false);
     const [needLateralNavbar, setNeedLateralNavbar] = useState(false);
+    const [langParam, setLangParam] = useState<LangParam>("en");
+
+    useEffect(() => {
+        const lang = getLangFromUrlClientSide();
+        setLangParam(lang);
+    }, []);
 
     useEffect(() => {
         if (window.innerWidth <= 1024) {
@@ -105,31 +113,31 @@ export default function Navbar() {
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
                         href={"/#experiences"}
-                        text={"Experiences"}
+                        text={DICTIONARY.Navbar[0][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
                         href={"/#works"}
-                        text={"Works"}
+                        text={DICTIONARY.Navbar[1][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
                         href={"/#studies"}
-                        text={"Studies"}
+                        text={DICTIONARY.Navbar[2][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
                         href={"/#posts"}
-                        text={"Posts"}
+                        text={DICTIONARY.Navbar[3][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
                         href={"/#footer-contacts"}
-                        text={"Contacts"}
+                        text={DICTIONARY.Navbar[4][langParam]}
                     />
                 </ul>
             </div>
