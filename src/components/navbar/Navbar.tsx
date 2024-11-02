@@ -125,6 +125,12 @@ export default function Navbar() {
                         href={"/#posts"}
                         text={"Posts"}
                     />
+                    <NavbarItem
+                        needLateralNavbar={needLateralNavbar}
+                        isDroppedDown={isDroppedDown}
+                        href={"/#footer-contacts"}
+                        text={"Contacts"}
+                    />
                 </ul>
             </div>
         </nav>

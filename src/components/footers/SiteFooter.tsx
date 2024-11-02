@@ -1,6 +1,6 @@
 export function SiteFooter() {
     return (
-        <footer className="py-6 md:px-8 md:py-0 border-t-2 border-slate-400 mt-10  backdrop-blur-lg bg-white bg-opacity-50">
+        <footer id="footer" className="py-6 md:px-8 md:py-0 border-t-2 border-slate-400 mt-10  backdrop-blur-lg bg-white bg-opacity-50">
             <div className="container flex flex-col sm:flex-row items-center justify-start gap-4 md:h-20 md:flex-row">
                 <p className="text-balance text-center text-md leading-loose text-muted-foreground md:text-left">
                     This is a footer. Something should come here in the
@@ -13,7 +13,7 @@ export function SiteFooter() {
                         Contact me!
                     </a>
                 </p>
-                <div className="flex justify-normal items-center gap-3">
+                <div id="footer-contacts" className="flex justify-normal items-center gap-3">
                     <a href="https://github.com/heloint">
                         <img
                             alt="github logo"
