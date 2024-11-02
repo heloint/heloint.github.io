@@ -53,7 +53,7 @@ export default function StudiesSection() {
                                         </div>
                                         <div>
                                             <h5 className="text-md font-semibold">
-                                                Best student in 1st and 2nd year
+                                                Best student in 1st year
                                                 Web application development with
                                                 bioinformatics profile
                                             </h5>
@@ -65,7 +65,25 @@ export default function StudiesSection() {
                                             </p>
                                             <p>
                                                 <i className="text-sm">
-                                                    2022-2023
+                                                    2022
+                                                </i>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h5 className="text-md font-semibold">
+                                                Best student in 2nd year
+                                                Web application development with
+                                                bioinformatics profile
+                                            </h5>
+                                            <p>
+                                                <i className="text-sm">
+                                                    Provençana Institute,
+                                                    Barcelona, Spain
+                                                </i>
+                                            </p>
+                                            <p>
+                                                <i className="text-sm">
+                                                    2023
                                                 </i>
                                             </p>
                                         </div>
