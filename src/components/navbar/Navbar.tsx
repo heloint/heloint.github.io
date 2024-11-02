@@ -117,31 +117,31 @@ export default function Navbar() {
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
-                        href={"/#experiences"}
+                        href={`/${langParam}#experiences`}
                         text={DICTIONARY.Navbar[0][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
-                        href={"/#works"}
+                        href={`/${langParam}#works`}
                         text={DICTIONARY.Navbar[1][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
-                        href={"/#studies"}
+                        href={`/${langParam}#studies`}
                         text={DICTIONARY.Navbar[2][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
-                        href={"/#posts"}
+                        href={`/${langParam}#posts`}
                         text={DICTIONARY.Navbar[3][langParam]}
                     />
                     <NavbarItem
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
-                        href={"/#footer-contacts"}
+                        href={`/${langParam}#footer-contacts`}
                         text={DICTIONARY.Navbar[4][langParam]}
                     />
                     <LanguageSelection
