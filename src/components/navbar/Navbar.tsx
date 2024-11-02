@@ -79,7 +79,7 @@ export default function Navbar() {
             <div className="max-w-screen-xl lg:flex lg:content-center lg:justify-around lg:mx-auto mx-10 h-full items-center">
                 <div className="flex justify-between content-center items-center">
                     <div id="home-nav-icon " className="py-2">
-                        <Link href="/">
+                        <Link href={`/${langParam}`}>
                             <img
                                 alt="navbar icon"
                                 width={200}
