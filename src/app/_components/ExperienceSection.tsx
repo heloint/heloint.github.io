@@ -23,7 +23,7 @@ export function ExperienceSection() {
                 <div className="flex justify-center items-center w-full">
                     <Timeline>
                         <TimelineItem
-                            dateRange="07/2024 - NOW"
+                            dateRange="07/2024 - CURRENT POSITION"
                             company="Barcelona Supercomputing Center, Gabaldón Lab"
                             position="Fullstack Developer"
                             description={
@@ -122,7 +122,7 @@ function TimelineItem({
     return (
         <li className={`mb-10 ms-4 border-2 border-slate-400 p-3 rounded-xl w-full relative backdrop-blur-lg`}>
             <div className="absolute w-5 h-5 bg-gray-700 rounded-full mt-1.5 -start-7 border-2 border-white"></div>
-            <time className="mb-1 text-md leading-none lg:absolute lg:-start-48 lg:inset-y-5 font-semibold">
+            <time className="mb-1 text-md leading-none lg:absolute lg:-start-52 lg:inset-y-5 font-semibold max-w-[11rem] text-wrap">
                 {dateRange}
             </time>
             <span>
