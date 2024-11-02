@@ -17,7 +17,7 @@ export async function generateStaticParams() {
         fileName.replace(".md", "")
     );
 
-    let combinations = [];
+    const combinations = [];
     for (const lang of langParams) {
         for (const postId of postIds) {
             combinations.push({lang: lang, postId: postId})
