@@ -1,95 +1,23 @@
 "use client";
 
-import { useRef, useState, useEffect, RefObject, Dispatch, SetStateAction } from "react";
+import {
+    useRef,
+    useState,
+    useEffect,
+    RefObject,
+    Dispatch,
+    SetStateAction,
+} from "react";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { LangParam, langParams } from "@/lib/internationalization/langParam";
 
 type LanguageSelectionProps = {
+    currentLang: LangParam;
     defaultLanguage: LangParam;
     needLateralNavbar: boolean;
     isDroppedDown: boolean;
 };
-
-function useHandleUseEffect(
-    subDropdownRef: RefObject<HTMLUListElement | null>,
-    parentItemRef: RefObject<HTMLLIElement | null>,
-    setDroppedDown: Dispatch<SetStateAction<boolean>>
-) {
-    useEffect(() => {
-        const handleOutSideClick = (event: any) => {
-            if (
-                subDropdownRef.current &&
-                !subDropdownRef.current.contains(event.target) &&
-                parentItemRef.current &&
-                !parentItemRef.current.contains(event.target)
-            ) {
-                setDroppedDown(false);
-            }
-        };
-
-        const handleWindowResize = () => {
-            setDroppedDown(false);
-            subDropdownRef.current!.style.top = "";
-            subDropdownRef.current!.style.right = "";
-            subDropdownRef.current!.style.left = "";
-        };
-
-        window.addEventListener("resize", handleWindowResize);
-        window.addEventListener("mousedown", handleOutSideClick);
-        return () => {
-            window.removeEventListener("mousedown", handleOutSideClick);
-            window.removeEventListener("resize", handleWindowResize);
-        };
-    }, [subDropdownRef, parentItemRef, setDroppedDown]);
-}
-
-function toggleDropdown(
-    subDropdownRef: RefObject<HTMLUListElement | null>,
-    isDroppedDown: boolean,
-    setDroppedDown: Dispatch<SetStateAction<boolean>>,
-    params: LanguageSelectionProps
-) {
-    const dropdown = subDropdownRef.current;
-    const mainSideBarWidth: number | undefined = subDropdownRef.current?.parentElement?.offsetWidth;
-    const mainSideBarHeight: number | undefined =
-        subDropdownRef.current?.parentElement?.offsetHeight;
-    if (!dropdown || mainSideBarWidth === undefined || mainSideBarHeight === undefined) {
-        return;
-    }
-    if (!isDroppedDown) {
-        setDroppedDown(true);
-
-        if (params.needLateralNavbar) {
-            dropdown.style.right = `${mainSideBarWidth - 3}px`;
-            dropdown.style.top = `0px`;
-        } else {
-            dropdown.style.top = `${mainSideBarHeight * 1.05}px`;
-            dropdown.style.left = "-1.0rem";
-        }
-    } else {
-        setDroppedDown(false);
-        dropdown.style.top = "";
-        dropdown.style.right = "";
-        dropdown.style.left = "";
-    }
-}
-
-function redirectToLangBaseUrl(router: AppRouterInstance, lang: LangParam) {
-    console.log("==> change lang.")
-    if (!window) {
-        return;
-    }
-    const currentPathname = window.location.pathname;
-    const pathnameParts = currentPathname.split("/");
-    const filteredParts = pathnameParts.filter(part => part != "");
-    const currentLangParam = filteredParts[0] as LangParam;
-    if (!langParams.includes(currentLangParam)) {
-        router.push("/en");
-    }
-    console.log(filteredParts.toSpliced(1,1))
-
-}
 
 export default function LanguageSelection(params: LanguageSelectionProps) {
     const parentItemRef = useRef<HTMLLIElement>(null);
@@ -102,20 +30,38 @@ export default function LanguageSelection(params: LanguageSelectionProps) {
         en: "/language-icons/microscreen-en-lang-icon.png",
         es: "/language-icons/microscreen-es-lang-icon.jpg",
     };
-    const currentLanguageIcon = languageIconPaths[params.defaultLanguage];
+    const currentLanguageIcon = languageIconPaths[params.currentLang];
 
     return (
         <li
             ref={parentItemRef}
-            onClick={() => toggleDropdown(subDropdownRef, isDroppedDown, setDroppedDown, params)}
+            onClick={() =>
+                toggleDropdown(
+                    subDropdownRef,
+                    isDroppedDown,
+                    setDroppedDown,
+                    params
+                )
+            }
             onKeyDown={(e) => {
                 e.key.toLowerCase() === "enter"
-                    ? toggleDropdown(subDropdownRef, isDroppedDown, setDroppedDown, params)
+                    ? toggleDropdown(
+                          subDropdownRef,
+                          isDroppedDown,
+                          setDroppedDown,
+                          params
+                      )
                     : null;
             }}
             className="flex gap-2 lg:pt-4 relative cursor-pointer justify-between border-2 border-slate-300 border-x-transparent border-b-transparent items-center text-black text-center lg:border-0 w-100 px-10 py-4 lg:p-0 animated-bottom-border"
-            aria-hidden={params.needLateralNavbar && !params.isDroppedDown ? "true" : "false"}
-            tabIndex={params.needLateralNavbar && !params.isDroppedDown ? -1 : 0}
+            aria-hidden={
+                params.needLateralNavbar && !params.isDroppedDown
+                    ? "true"
+                    : "false"
+            }
+            tabIndex={
+                params.needLateralNavbar && !params.isDroppedDown ? -1 : 0
+            }
         >
             {params.needLateralNavbar ? (
                 <svg
@@ -162,7 +108,11 @@ export default function LanguageSelection(params: LanguageSelectionProps) {
                 <li className="flex justify-center border-b-2 border-solid border-slate-400 m-0">
                     <span
                         onClick={() => redirectToLangBaseUrl(router, "en")}
-                        tabIndex={params.needLateralNavbar && !params.isDroppedDown ? -1 : 0}
+                        tabIndex={
+                            params.needLateralNavbar && !params.isDroppedDown
+                                ? -1
+                                : 0
+                        }
                         className="w-full py-2 px-4 whitespace-nowrap animated-bottom-border"
                     >
                         English
@@ -171,7 +121,11 @@ export default function LanguageSelection(params: LanguageSelectionProps) {
                 <li className="flex justify-center border-b-2 border-solid border-slate-400 m-0">
                     <span
                         onClick={() => redirectToLangBaseUrl(router, "es")}
-                        tabIndex={params.needLateralNavbar && !params.isDroppedDown ? -1 : 0}
+                        tabIndex={
+                            params.needLateralNavbar && !params.isDroppedDown
+                                ? -1
+                                : 0
+                        }
                         className="w-full py-2 px-4 whitespace-nowrap animated-bottom-border"
                     >
                         Español
@@ -181,3 +135,89 @@ export default function LanguageSelection(params: LanguageSelectionProps) {
         </li>
     );
 }
+
+function useHandleUseEffect(
+    subDropdownRef: RefObject<HTMLUListElement | null>,
+    parentItemRef: RefObject<HTMLLIElement | null>,
+    setDroppedDown: Dispatch<SetStateAction<boolean>>
+) {
+    useEffect(() => {
+        const handleOutSideClick = (event: any) => {
+            if (
+                subDropdownRef.current &&
+                !subDropdownRef.current.contains(event.target) &&
+                parentItemRef.current &&
+                !parentItemRef.current.contains(event.target)
+            ) {
+                setDroppedDown(false);
+            }
+        };
+
+        const handleWindowResize = () => {
+            setDroppedDown(false);
+            subDropdownRef.current!.style.top = "";
+            subDropdownRef.current!.style.right = "";
+            subDropdownRef.current!.style.left = "";
+        };
+
+        window.addEventListener("resize", handleWindowResize);
+        window.addEventListener("mousedown", handleOutSideClick);
+        return () => {
+            window.removeEventListener("mousedown", handleOutSideClick);
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, [subDropdownRef, parentItemRef, setDroppedDown]);
+}
+
+function toggleDropdown(
+    subDropdownRef: RefObject<HTMLUListElement | null>,
+    isDroppedDown: boolean,
+    setDroppedDown: Dispatch<SetStateAction<boolean>>,
+    params: LanguageSelectionProps
+) {
+    const dropdown = subDropdownRef.current;
+    const mainSideBarWidth: number | undefined =
+        subDropdownRef.current?.parentElement?.offsetWidth;
+    const mainSideBarHeight: number | undefined =
+        subDropdownRef.current?.parentElement?.offsetHeight;
+    if (
+        !dropdown ||
+        mainSideBarWidth === undefined ||
+        mainSideBarHeight === undefined
+    ) {
+        return;
+    }
+    if (!isDroppedDown) {
+        setDroppedDown(true);
+
+        if (params.needLateralNavbar) {
+            dropdown.style.right = `${mainSideBarWidth - 3}px`;
+            dropdown.style.top = `0px`;
+        } else {
+            dropdown.style.top = `${mainSideBarHeight * 1.05}px`;
+            dropdown.style.left = "-1.0rem";
+        }
+    } else {
+        setDroppedDown(false);
+        dropdown.style.top = "";
+        dropdown.style.right = "";
+        dropdown.style.left = "";
+    }
+}
+
+function redirectToLangBaseUrl(router: AppRouterInstance, lang: LangParam) {
+    if (!window) {
+        return;
+    }
+    const currentPathname = window.location.pathname;
+    const pathnameParts = currentPathname.split("/");
+    const filteredParts = pathnameParts.filter((part) => part != "");
+    const currentLangParam = filteredParts[0] as LangParam;
+    if (!langParams.includes(currentLangParam)) {
+        router.push("/en");
+    }
+    const newPathname = ["", lang, ...filteredParts.toSpliced(0, 1)].join("/");
+    window.location.href=newPathname
+}
+
+

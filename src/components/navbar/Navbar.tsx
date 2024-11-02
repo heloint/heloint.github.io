@@ -145,6 +145,7 @@ export default function Navbar() {
                         text={DICTIONARY.Navbar[4][langParam]}
                     />
                     <LanguageSelection
+                        currentLang={langParam}
                         defaultLanguage={defaultLangParam}
                         needLateralNavbar={needLateralNavbar}
                         isDroppedDown={isDroppedDown}
