@@ -4,8 +4,13 @@ import SideBarOpenButton from "./SideBarToggleButton";
 import SideBarCloseButton from "./SideBarCloseButton";
 import NavbarItem from "./NavbarItem";
 import Link from "next/link";
-import {DICTIONARY} from '@/lib/internationalization/dictionary';
-import { getLangFromUrlClientSide, LangParam } from "@/lib/internationalization/langParam";
+import { DICTIONARY } from "@/lib/internationalization/dictionary";
+import {
+    defaultLangParam,
+    getLangFromUrlClientSide,
+    LangParam,
+} from "@/lib/internationalization/langParam";
+import LanguageSelection from "./LanguageSelectionButton";
 
 export default function Navbar() {
     const navbarOptionsRef = useRef<HTMLUListElement>(null);
@@ -138,6 +143,11 @@ export default function Navbar() {
                         isDroppedDown={isDroppedDown}
                         href={"/#footer-contacts"}
                         text={DICTIONARY.Navbar[4][langParam]}
+                    />
+                    <LanguageSelection
+                        defaultLanguage={defaultLangParam}
+                        needLateralNavbar={needLateralNavbar}
+                        isDroppedDown={isDroppedDown}
                     />
                 </ul>
             </div>
