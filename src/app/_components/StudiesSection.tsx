@@ -31,7 +31,7 @@ export default function StudiesSection() {
                                         <h4>
                                             <b className="flex items-center">
                                                 <RightBarArrow />{" "}
-                                                <u>Achievments</u>
+                                                <u>Achievements</u>
                                             </b>
                                         </h4>
                                         <div>
