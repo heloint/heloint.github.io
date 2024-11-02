@@ -9,7 +9,7 @@ import matter from "gray-matter";
 import Header1 from "@/components/animated-headers/Header1";
 import Card1 from "@/components/cards/card1";
 import OpacityTransitionWrapper from "@/components/opacity-transition-wrapper/OpacityTransitionWrapper";
-import { ServerComponentLangProp } from "@/lib/internationalization/langParam";
+import { LangParam, ServerComponentLangProp } from "@/lib/internationalization/langParam";
 import { DICTIONARY } from "@/lib/internationalization/dictionary";
 
 export default function PostsSection(props: ServerComponentLangProp) {
@@ -37,14 +37,14 @@ export default function PostsSection(props: ServerComponentLangProp) {
             </OpacityTransitionWrapper>
             <div className="flex flex-col gap-3 items-center">
                 {postIds.map((postId, idx) => (
-                    <PostBox key={idx} postId={postId} />
+                    <PostBox key={idx} postId={postId} lang={props.lang ? props.lang : "en"}/>
                 ))}
             </div>
         </section>
     );
 }
 
-async function PostBox(params: { postId: string }) {
+async function PostBox(params: { postId: string, lang: LangParam }) {
     const markdownPath = path.join(
         process.cwd(),
         "_markdown_contents",
@@ -63,7 +63,7 @@ async function PostBox(params: { postId: string }) {
                 <h3 className="text-lg font-semibold">
                     <a
                         className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
-                        href={`/posts/${params.postId}`}
+                        href={`/${params.lang}/posts/${params.postId}`}
                     >
                         {matterResult.data.title}
                     </a>

@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect, RefObject, Dispatch, SetStateAction } from "react";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { LangParam } from "@/lib/internationalization/langParam";
+import { LangParam, langParams } from "@/lib/internationalization/langParam";
 
 type LanguageSelectionProps = {
     defaultLanguage: LangParam;
@@ -77,12 +77,18 @@ function toggleDropdown(
 
 function redirectToLangBaseUrl(router: AppRouterInstance, lang: LangParam) {
     console.log("==> change lang.")
-    // const origin: string = window.location.origin;
-    // const pathnameWithNewLocale: string = `/${lang}/${window.location.pathname.split("/").slice(2).join("/")}`;
-    // const searchParams: string = window.location.search;
-    // const newURL: string = `${origin}${pathnameWithNewLocale}${searchParams}`;
-    // setCookie("lang", lang);
-    // window.location.href = newURL;
+    if (!window) {
+        return;
+    }
+    const currentPathname = window.location.pathname;
+    const pathnameParts = currentPathname.split("/");
+    const filteredParts = pathnameParts.filter(part => part != "");
+    const currentLangParam = filteredParts[0] as LangParam;
+    if (!langParams.includes(currentLangParam)) {
+        router.push("/en");
+    }
+    console.log(filteredParts.toSpliced(1,1))
+
 }
 
 export default function LanguageSelection(params: LanguageSelectionProps) {

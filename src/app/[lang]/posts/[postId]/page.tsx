@@ -4,6 +4,7 @@ import html from "remark-html";
 
 import * as fs from "fs";
 import matter from "gray-matter";
+import { LangParam, langParams } from "@/lib/internationalization/langParam";
 
 export async function generateStaticParams() {
     const postsMarkdownDir = path.join(
@@ -15,13 +16,18 @@ export async function generateStaticParams() {
     const postIds = markdownFiles.map((fileName) =>
         fileName.replace(".md", "")
     );
-    return postIds.map((postId) => ({
-        postId: postId,
-    }));
+
+    let combinations = [];
+    for (const lang of langParams) {
+        for (const postId of postIds) {
+            combinations.push({lang: lang, postId: postId})
+        }
+    }
+    return combinations;
 }
 
 export default async function Page(props: {
-    params: Promise<{ postId: string }>;
+    params: Promise<{ lang:LangParam, postId: string }>;
 }) {
     const params = await props.params;
     const markdownPath = path.join(
