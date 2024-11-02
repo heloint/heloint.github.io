@@ -120,9 +120,15 @@ function TimelineItem({
     description: string | React.ReactElement;
 }) {
     return (
-        <li className={`mb-10 ms-4 border-2 border-slate-400 p-3 rounded-xl w-full relative backdrop-blur-lg`}>
+        <li
+            className={`mb-10 ms-4 border-2 border-slate-400 p-3 rounded-xl w-full relative backdrop-blur-lg`}
+        >
             <div className="absolute w-5 h-5 bg-gray-700 rounded-full mt-1.5 -start-7 border-2 border-white"></div>
-            <time className="mb-1 text-md leading-none lg:absolute lg:-start-52 lg:inset-y-5 font-semibold max-w-[11rem] text-wrap">
+            <time
+                className={`mb-1 text-md leading-none lg:absolute  lg:inset-y-5 font-semibold ${
+                    dateRange.length > 22 ? "lg:-start-[19rem]" : "lg:-start-52"
+                }`}
+            >
                 {dateRange}
             </time>
             <span>
