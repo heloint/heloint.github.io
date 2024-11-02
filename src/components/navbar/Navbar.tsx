@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import SideBarOpenButton from "./SideBarToggleButton";
 import SideBarCloseButton from "./SideBarCloseButton";
 import NavbarItem from "./NavbarItem";
+import Link from "next/link";
 
 export default function Navbar() {
     const navbarOptionsRef = useRef<HTMLUListElement>(null);
@@ -65,7 +66,7 @@ export default function Navbar() {
             <div className="max-w-screen-xl lg:flex lg:content-center lg:justify-around lg:mx-auto mx-10 h-full items-center">
                 <div className="flex justify-between content-center items-center">
                     <div id="home-nav-icon " className="py-2">
-                        <a href="/">
+                        <Link href="/">
                             <img
                                 alt="navbar icon"
                                 width={200}
@@ -73,7 +74,7 @@ export default function Navbar() {
                                 src="/icons/signature-icon.png"
                                 className="hover:scale-105"
                             />
-                        </a>
+                        </Link>
                     </div>
                     <SideBarOpenButton
                         setDroppedDown={setDroppedDown}

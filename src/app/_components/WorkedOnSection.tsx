@@ -181,6 +181,7 @@ function WorkedOnSectionItem(params: WorkedOnSectionContent) {
                         </span>
                     </div>
                     <img
+                        alt="dialog img"
                         src={params.imgURL}
                         className="border-2 border-y-0 rounded-t-none rounded-b-none rounded-xl max-h-[22rem] w-full"
                     />
@@ -222,6 +223,7 @@ function WorkedOnSectionItem(params: WorkedOnSectionContent) {
                                 : null}
                         </div>
                         <img
+                            alt="dialog header img"
                             src={params.imgURL}
                             className="border-2 border-y-0 rounded-t-none rounded-b-none rounded-xl"
                         />

@@ -21,12 +21,14 @@ export function ProfilePicture({ className }: { className?: string }) {
         >
             <div className="relative flex items-center justify-center">
                 <img
+                    alt="profile img"
                     src="/profile.jpg"
                     width={200}
                     height={200}
                     className="rounded-full"
                 />
                 <img
+                    alt="waving hand icon"
                     src="/icons/waving-hand-icon.svg"
                     width={100}
                     height={100}

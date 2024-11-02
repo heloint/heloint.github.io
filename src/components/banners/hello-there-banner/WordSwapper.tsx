@@ -16,13 +16,13 @@ export default function WordSwapper({
 }) {
     useEffect(() => {
         const swapWords = async (targetClass: string) => {
-            let words = document.querySelectorAll(targetClass);
+            const words = document.querySelectorAll(targetClass);
             words.forEach((word) => {
                 if (word.textContent) {
-                    let letters = word.textContent.split("");
+                    const letters = word.textContent.split("");
                     word.textContent = "";
                     letters.forEach((letter) => {
-                        let span = document.createElement("span");
+                        const span = document.createElement("span");
                         span.textContent = letter;
                         span.className = "letter";
                         word.append(span);
@@ -35,8 +35,8 @@ export default function WordSwapper({
             (words[currentWordIndex] as HTMLElement).style.opacity = "1";
 
             const rotateText = () => {
-                let currentWord = words[currentWordIndex];
-                let nextWord =
+                const currentWord = words[currentWordIndex];
+                const nextWord =
                     currentWordIndex === maxWordIndex
                         ? words[0]
                         : words[currentWordIndex + 1];

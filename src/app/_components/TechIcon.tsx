@@ -61,7 +61,7 @@ export default function TechIcon({
         <div
             className={`${className} col-span-1 flex justify-center items-center text-xl gap-1 border-2 rounded-3xl p-1 shadow-inner`}
         >
-            <img src={selectedOption.url} width={28} height={28} />
+            <img alt="tech icon" src={selectedOption.url} width={28} height={28} />
             <span className="text-[1rem]">{selectedOption.label}</span>
         </div>
     );
