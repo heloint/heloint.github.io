@@ -139,6 +139,30 @@ export const DICTIONARY = {
         contents: {
             en: [
                 {
+                    title: "PhylomeDB6 (currently in beta version)",
+                    referenceURL: "https://beta.phylomedb.org",
+                    imgURL: "/project-imgs/phylomedb6.png",
+                    usedTechs: [
+                        "nextjs",
+                        "fastapi",
+                        "typescript",
+                        "python",
+                        "slurm",
+                        "tailwind",
+                        "apache",
+                        "mariadb",
+                        "docker",
+                        "dockercompose",
+                    ],
+                    description: `PhylomeDB is a public database for complete catalogs of
+                    gene phylogenies (phylomes). It allows users to interactively explore
+                    the evolutionary history of genes through the visualization of phylogenetic
+                    trees and multiple sequence alignments. Moreover, phylomeDB provides genome-wide
+                    orthology and paralogy predictions which are based on the analysis of the phylogenetic trees.
+                    The automated pipeline used to reconstruct trees aims at providing a high-quality phylogenetic analysis of
+                    different genomes, including Maximum Likelihood tree inference, alignment trimming and evolutionary model testing.`,
+                },
+                {
                     title: "Phylomizer3.0 (Internal private platform)",
                     referenceURL: "https://github.com/Gabaldonlab/phylomizer",
                     imgURL: "/project-imgs/phylomizer3-scrnshot.png",
@@ -265,6 +289,31 @@ export const DICTIONARY = {
                 },
             ],
             es: [
+                {
+                    title: "PhylomeDB6 (actualmente en versión beta)",
+                    referenceURL: "https://beta.phylomedb.org",
+                    imgURL: "/project-imgs/phylomedb6.png",
+                    usedTechs: [
+                        "nextjs",
+                        "fastapi",
+                        "typescript",
+                        "python",
+                        "slurm",
+                        "tailwind",
+                        "apache",
+                        "mariadb",
+                        "docker",
+                        "dockercompose",
+                    ],
+                    description: `PhylomeDB es una base de datos pública que contiene catálogos completos de
+                        filogenias de genes (filomas). Permite a los usuarios explorar interactivamente
+                        la historia evolutiva de los genes mediante la visualización de árboles filogenéticos
+                        y alineaciones múltiples de secuencias. Además, PhylomeDB proporciona predicciones de
+                        ortología y paralogía a nivel genómico, basadas en el análisis de los árboles filogenéticos.
+                        La canalización automatizada utilizada para reconstruir los árboles tiene como objetivo proporcionar
+                        un análisis filogenético de alta calidad de diferentes genomas, incluyendo la inferencia de árboles
+                        mediante Máxima Verosimilitud, el recorte de alineaciones y la prueba de modelos evolutivos.`,
+                },
                 {
                     title: "Phylomizer3.0 (Plataforma privada interna)",
                     referenceURL: "https://github.com/Gabaldonlab/phylomizer",
